@@ -37,6 +37,46 @@ function expect(target) {
 //
 // ONLY ADD CODE TO THIS SECTION
 
+function Dog({hungry = true, status = "normal", color, owner} = {}){
+  this.color = color;
+  this.owner = owner; // This needs to not set it to the owner, but the owner.name?
+  this.hungry = hungry;
+  this.status = status;
+}
+
+function Human({name, cool = false} = {}){
+  // Will need to take input of Dog.
+  // Will need to take input of Dog to set a feed.
+  this.name = name;
+  this.cool = cool;
+
+}
+
+
+Human.prototype.pet = function(dog){
+  dog.status = "happy";
+};
+
+Human.prototype.feed = function(dog){
+  dog.hungry = false;
+};
+
+
+/*
+Human.prototype.owner = function(dog){
+  dog.owner = this.name;
+};
+*/
+
+/* it("should make Oz happy when Mady pets him", function(){
+  expect(oz.status).toBe('normal');
+  mady.pet(oz);
+  expect(oz.status).toBe('happy');
+});*/
+
+
+
+
 
 
 //     __
